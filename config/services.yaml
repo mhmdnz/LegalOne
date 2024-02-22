@@ -31,4 +31,5 @@ services:
                   - ['http://elasticsearch:9200']
 
     Elasticsearch\Client:
+        public: true
         factory: ['@Elasticsearch\ClientBuilder', 'build']

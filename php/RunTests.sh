@@ -1,1 +1,1 @@
-/var/www/html/snappfood/vendor/bin/phpunit
+/var/www/html/LegalOne/vendor/bin/phpunit
