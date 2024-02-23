@@ -1,1 +1,0 @@
-/var/www/html/LegalOne/vendor/bin/phpunit
