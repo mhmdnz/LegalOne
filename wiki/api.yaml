@@ -70,6 +70,17 @@ paths:
                 $ref: '#/components/schemas/CountItem'
         "400":
           description: bad input parameter
+  /delete:
+    delete:
+      tags:
+        - analytics
+      summary: searches logs and provides aggregated count of matches
+      description: |
+        Count all matching items in the logs.
+      operationId: deleteLogs
+      responses:
+        "204":
+          description: No content response
 components:
   schemas:
     CountItem:
