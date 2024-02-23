@@ -23,7 +23,7 @@ class TruncateElasticSearchDatabaseActionTest extends KernelTestCase
     {
         // ARRANGE
         $this->truncateElasticSearchDatabaseServiceMock
-            ->expects($this->once()) // Expect the method to be called exactly once
+            ->expects($this->once())
             ->method('__invoke')
             ->willReturn(true);
 
@@ -38,7 +38,7 @@ class TruncateElasticSearchDatabaseActionTest extends KernelTestCase
     {
         // ARRANGE
         $this->truncateElasticSearchDatabaseServiceMock
-            ->expects($this->once()) // Expect the method to be called exactly once
+            ->expects($this->once())
             ->method('__invoke')
             ->willReturn(false);
 
