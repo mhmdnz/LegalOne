@@ -9,3 +9,5 @@ if (file_exists(dirname(__DIR__).'/config/bootstrap.php')) {
 } elseif (method_exists(Dotenv::class, 'bootEnv')) {
     (new Dotenv())->bootEnv(dirname(__DIR__).'/.env');
 }
+system('php bin/console doctrine:migration:migrate prev --no-interaction');
+system('php bin/console doctrine:migration:migrate --no-interaction');
