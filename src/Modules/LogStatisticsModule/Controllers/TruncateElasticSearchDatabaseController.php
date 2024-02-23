@@ -17,7 +17,7 @@ class TruncateElasticSearchDatabaseController extends AbstractController
     /**
      * @Route("/delete", name="elasticsearch_truncate", methods={"DELETE"})
      */
-    public function count(): Response
+    public function __invoke(): Response
     {
         ($this->truncateElasticSearchDatabaseAction)();
 

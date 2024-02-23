@@ -21,7 +21,7 @@ class CountElasticSearchLogsController extends AbstractController
     /**
      * @Route("/count", name="elasticsearch_log_count", methods={"GET"})
      */
-    public function count(Request $request): Response
+    public function __invoke(Request $request): Response
     {
         $elasticSearchFilterDTO = $this->getElasticSearchFilterDTO($request);
 
