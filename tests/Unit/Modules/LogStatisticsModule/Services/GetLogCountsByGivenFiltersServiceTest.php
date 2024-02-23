@@ -4,6 +4,7 @@ use App\Modules\LogStatisticsModule\DTOs\ElasticSearchFiltersDTO;
 use App\Modules\LogStatisticsModule\DTOs\GetLogCountsDTO;
 use App\Modules\LogStatisticsModule\Repositories\ElasticSearchAccessLogsRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use App\Modules\LogStatisticsModule\Services\GetLogCountsByGivenFiltersService;
 
 class GetLogCountsByGivenFiltersServiceTest extends KernelTestCase
 {
@@ -14,8 +15,7 @@ class GetLogCountsByGivenFiltersServiceTest extends KernelTestCase
     {
         $this->elasticSearchAccessLogsRepositoryMock = $this
             ->createMock(ElasticSearchAccessLogsRepository::class);
-        $this->sut = self::getContainer()
-            ->get(\App\Modules\LogStatisticsModule\Interfaces\GetLogCountsByGivenFiltersServiceInterface::class);
+        $this->sut = new GetLogCountsByGivenFiltersService($this->elasticSearchAccessLogsRepositoryMock);
     }
 
     public function testInvoke()

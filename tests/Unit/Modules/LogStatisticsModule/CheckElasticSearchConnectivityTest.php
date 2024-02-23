@@ -1,7 +1,9 @@
 <?php
 
-use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+namespace Tests\Unit\Modules\LogStatisticsModule;
+
 use Elasticsearch\Client;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 
 class CheckElasticSearchConnectivityTest extends KernelTestCase
 {
