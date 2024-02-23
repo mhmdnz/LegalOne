@@ -24,7 +24,7 @@ class ExceptionListenerTest extends KernelTestCase
 
         //ACT
         $listener->onKernelException($event);
-
+        $response = $event->getResponse();
 
         //Assert
         $this->assertInstanceOf(JsonResponse::class, $response);
