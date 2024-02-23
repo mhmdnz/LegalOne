@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Feature\Modules\LogStatisticsModule;
+
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
