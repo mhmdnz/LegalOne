@@ -33,3 +33,7 @@ services:
     Elasticsearch\Client:
         public: true
         factory: ['@Elasticsearch\ClientBuilder', 'build']
+
+    App\EventListeners\ExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
