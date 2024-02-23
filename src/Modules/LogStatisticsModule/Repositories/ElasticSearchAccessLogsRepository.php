@@ -6,11 +6,13 @@ use App\Exceptions\ElasticSearchIndexException;
 use App\Modules\LogStatisticsModule\DTOs\ElasticSearchFiltersDTO;
 use Elasticsearch\Client;
 use Psr\Log\LoggerInterface;
+use Symfony\Component\DependencyInjection\ParameterBag\ParameterBagInterface;
 
 class ElasticSearchAccessLogsRepository
 {
     public function __construct(
         private Client $client,
+        private ParameterBagInterface $params,
         private LoggerInterface $logger
     ) {
         ElasticSearchIndexException::setLogger($logger);
@@ -47,7 +49,7 @@ class ElasticSearchAccessLogsRepository
     private function getSearchQuery(ElasticSearchFiltersDTO $elasticSearchFiltersDTO): array
     {
         $querySkeleton = [
-            'index' => 'my-index',
+            'index' => $this->params->get('elasticsearch.index_name'),
             'body'  => [
                 'query' => [
                     'bool' => [
