@@ -1,15 +1,18 @@
 <?php
 
+namespace Tests\Unit\Modules\LogStatisticsModule\Services;
+
 use App\Modules\LogStatisticsModule\DTOs\ElasticSearchFiltersDTO;
 use App\Modules\LogStatisticsModule\DTOs\GetLogCountsDTO;
 use App\Modules\LogStatisticsModule\Repositories\ElasticSearchAccessLogsRepository;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use App\Modules\LogStatisticsModule\Services\GetLogCountsByGivenFiltersService;
+use \PHPUnit\Framework\MockObject\MockObject;
 
 class GetLogCountsByGivenFiltersServiceTest extends KernelTestCase
 {
-    private $elasticSearchAccessLogsRepositoryMock;
-    private $sut;
+    private MockObject $elasticSearchAccessLogsRepositoryMock;
+    private GetLogCountsByGivenFiltersService $sut;
 
     protected function setUp(): void
     {

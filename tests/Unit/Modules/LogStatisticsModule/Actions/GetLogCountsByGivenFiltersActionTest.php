@@ -1,5 +1,7 @@
 <?php
 
+namespace Tests\Unit\Modules\LogStatisticsModule\Actions;
+
 use App\Modules\LogStatisticsModule\Actions\GetLogCountsByGivenFiltersAction;
 use App\Modules\LogStatisticsModule\DTOs\ElasticSearchFiltersDTO;
 use App\Modules\LogStatisticsModule\DTOs\GetLogCountsDTO;
@@ -9,7 +11,7 @@ use \PHPUnit\Framework\MockObject\MockObject;
 
 class GetLogCountsByGivenFiltersActionTest extends KernelTestCase
 {
-    private MockObject $getLogCountsByGivenFiltersServiceMock;
+    private GetLogCountsByGivenFiltersServiceInterface|MockObject $getLogCountsByGivenFiltersServiceMock;
     private GetLogCountsByGivenFiltersAction $sut;
 
     protected function setUp(): void
