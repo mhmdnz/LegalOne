@@ -5,3 +5,7 @@ controllers:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+ElasticSearchControllers:
+    resource: ../src/Modules/LogStatisticsModule/Controllers
+    type: annotation
