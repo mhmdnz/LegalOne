@@ -50,7 +50,7 @@ services:
       - ./logstash/config/logstash.yml:/usr/share/logstash/config/logstash.yml
       - ./logstash/logs.log:/tmp/logs.log
       - ./logstash/elasticsearch-setup:/elasticsearch-setup
-    command: ["/elasticsearch-setup/start-logstash.sh"]
+    command: /bin/bash -c "chmod +x /elasticsearch-setup/start-logstash.sh && /elasticsearch-setup/start-logstash.sh"
     ports:
       - "5044:5044"
     depends_on:
