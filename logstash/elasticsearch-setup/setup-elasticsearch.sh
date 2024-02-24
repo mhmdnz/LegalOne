@@ -11,6 +11,6 @@ while true; do
         sleep 1
     fi
 done
-
+curl -X DELETE "$ELASTICSEARCH_URL/_all"
 curl -X PUT "$ELASTICSEARCH_URL/$INDEX_NAME" -H 'Content-Type: application/json' -d @/elasticsearch-setup/index-mapping.json
 echo "Index creation complete."
